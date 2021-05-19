@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Banner -->
+<section id="banner">
+    <div class="inner">
+        <h2>Prenota Videogioco</h2>
+        <p>Con questo sito avrai la possibilità di prenotare il tuo Video gioco<br/>
+        @if (!User.Identity.IsAuthenticated)
+        {
+        <ul class="actions special">
+            <li><a asp-area="" asp-controller="Account" asp-action="LogIn" class="button primary">LogIn</a></li>
+        </ul>
+        }
+    </div>
+</section>
+

@@ -1,0 +1,36 @@
+@using Microsoft.EntityFrameworkCore
+@using Pasquinelli.Martina._5H.SecondaWeb.Models
+@model Pasquinelli.Martina._5H.SecondaWeb.Models.Prenotazione
+
+@{
+    ViewData["Title"] = "Modifica";
+    Prenotazione p= Model;
+    
+}
+<header>
+	<h2>Modifica</h2>						
+</header>
+<section class="wrapper style5">
+	<div class="inner">
+		<section>
+		<div class="text-center">
+		    <form class="m-2" method="post" asp-controller="Home" asp-action="Modifica">
+		            <div class="form-group">
+		                <label asp-for="Nome">Il tuo nome:</label>
+
+		                <input asp-for="Nome" class="form-control" value="@p.Nome">
+		            </div>
+		            <div class="form-group">
+		                <label asp-for="Email">La tua Email:</label>
+		                <input asp-for="Email" class="form-control" value="@p.Email">
+		            </div>
+					<div class="form-group">
+						<label asp-for="VideoGioco">Il tuo Video gioco:</label>
+						<input asp-for="VideoGioco" class="form-control">
+					</div>
+		        <button type="submit" class="btn btn-primary">Modifica</button>
+		    </form>
+		</div>
+	</section>
+</div>
+</section>

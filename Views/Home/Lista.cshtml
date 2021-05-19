@@ -1,0 +1,44 @@
+@using Microsoft.EntityFrameworkCore
+@using Pasquinelli.Martina._5H.SecondaWeb.Models
+@model DBContext
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+ 
+<header>
+  <h2>Bene sei riuscito ad autenticarti</h2>
+</header>
+<section class="wrapper style5">
+	<div class="inner">
+<section>
+  <div class="text-center">
+    <h1 class="display-4">Grazie</h1>
+    <h2>La tua prenotazione è andata a buon fine.</h2>
+    <p>@Html.ActionLink("Aggiungi Prenotazione","Prenota")</p>
+    <h1>Ecco lista delle prenotazioni:</h1>
+    <table class="table table-bordered table-striped table-sm">
+        <thead>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Video gioco</th>
+            <th>Data</th>
+        </thead>
+        <tbody>
+            @foreach (Prenotazione p in Model.Prenotazioni)
+            {
+                <tr>
+                    <td>@p.Nome</td>
+                    <td>@p.Email</td>
+                    <td>@p.VideoGioco</td>
+                    <td>@p.DataPrenotazione</td>
+                    <td>@Html.ActionLink("Cancella","Cancella","Home",new {Id=p.PrenotazioneId})</td>
+                    <td>@Html.ActionLink("Modifica","Modifica","Home",new {Id=p.PrenotazioneId})</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</section>
+  </div>
+</section>
